@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteRule ^shirts/$ /courses/treehouse/PHP/shirts/shirts.php 
+RewriteRule ^shirts/([0-9]+)/$ /courses/treehouse/PHP/shirts/shirt.php?id=$1
+RewriteRule ^receipt.php$ /courses/treehouse/PHP/receipt/ [R=301]
+RewriteRule ^contact.php$ /courses/treehouse/PHP/contact/ [R=301]
+RewriteRule ^shirts.php$ /courses/treehouse/PHP/shirts/ [R=301]
+RewriteRule ^(shirts/[0-9]+)$ /courses/treehouse/PHP/$1/ [R=301]
+
+RewriteCond %{QUERY_STRING} ^id=([0-9]+)$
+RewriteRule ^shirt.php$ /courses/treehouse/PHP/shirts/%1/? [R=301]
